@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,7 +14,6 @@
 		45AB03AA1533D94F00E0D611 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB03A91533D94F00E0D611 /* main.m */; };
 		45AB03AE1533D94F00E0D611 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB03AD1533D94F00E0D611 /* AppDelegate.m */; };
 		45AB03B11533D94F00E0D611 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AB03B01533D94F00E0D611 /* ViewController.m */; };
-		45AB03B41533D94F00E0D611 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45AB03B21533D94F00E0D611 /* ViewController.xib */; };
 		45AB03BC1533D94F00E0D611 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AB03BB1533D94F00E0D611 /* SenTestingKit.framework */; };
 		45AB03BD1533D94F00E0D611 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AB039D1533D94F00E0D611 /* UIKit.framework */; };
 		45AB03BE1533D94F00E0D611 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45AB039F1533D94F00E0D611 /* Foundation.framework */; };
@@ -46,7 +45,6 @@
 		45AB03AD1533D94F00E0D611 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45AB03AF1533D94F00E0D611 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		45AB03B01533D94F00E0D611 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		45AB03B31533D94F00E0D611 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 		45AB03BA1533D94F00E0D611 /* UIWebViewTestTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIWebViewTestTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45AB03BB1533D94F00E0D611 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		45AB03C31533D94F00E0D611 /* UIWebViewTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UIWebViewTestTests-Info.plist"; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				45AB03AD1533D94F00E0D611 /* AppDelegate.m */,
 				45AB03AF1533D94F00E0D611 /* ViewController.h */,
 				45AB03B01533D94F00E0D611 /* ViewController.m */,
-				45AB03B21533D94F00E0D611 /* ViewController.xib */,
 				45AB03A41533D94F00E0D611 /* Supporting Files */,
 			);
 			path = UIWebViewTest;
@@ -203,7 +200,7 @@
 				ORGANIZATIONNAME = Netease;
 			};
 			buildConfigurationList = 45AB03931533D94F00E0D611 /* Build configuration list for PBXProject "UIWebViewTest" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -226,7 +223,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				45AB03A81533D94F00E0D611 /* InfoPlist.strings in Resources */,
-				45AB03B41533D94F00E0D611 /* ViewController.xib in Resources */,
 				45AB03D31533D9C500E0D611 /* index.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,14 +291,6 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		45AB03B21533D94F00E0D611 /* ViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45AB03B31533D94F00E0D611 /* en */,
-			);
-			name = ViewController.xib;
-			sourceTree = "<group>";
-		};
 		45AB03C41533D94F00E0D611 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,7 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -343,7 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -365,6 +353,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebViewTest/UIWebViewTest-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewTest/UIWebViewTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -376,6 +365,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UIWebViewTest/UIWebViewTest-Prefix.pch";
 				INFOPLIST_FILE = "UIWebViewTest/UIWebViewTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -434,6 +424,7 @@
 				45AB03CE1533D94F00E0D611 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45AB03CF1533D94F00E0D611 /* Build configuration list for PBXNativeTarget "UIWebViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +433,7 @@
 				45AB03D11533D94F00E0D611 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

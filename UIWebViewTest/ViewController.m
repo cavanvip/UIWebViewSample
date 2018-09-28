@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @implementation ViewController
-@synthesize webView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -23,6 +22,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
+    
+    self.addLineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.addLineBtn.frame = CGRectMake(screenW - 200, screenH - 200, 100, 50);
+    [self.addLineBtn setTitle:@"增加一行" forState:UIControlStateNormal];
+    [self.addLineBtn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
+    [self.addLineBtn addTarget:self action:@selector(addContentAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.addLineBtn];
+    
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, screenW, screenH)];
+    self.webView.delegate = self;
+    [self.view insertSubview:self.webView belowSubview:self.addLineBtn];
+    
     NSString * path = [[NSBundle mainBundle] bundlePath];
     NSURL * baseURL = [NSURL fileURLWithPath:path];
     NSString * htmlFile = [[NSBundle mainBundle] pathForResource:@"index" ofType:@"html"];
@@ -76,14 +90,14 @@
     return YES;
 }
 
-- (IBAction)addContent:(id)sender {
+- (void)addContentAction:(id)sender {
     NSString * js = @" var p = document.createElement('p'); p.innerText = 'new Line';document.body.appendChild(p);";
     [self.webView stringByEvaluatingJavaScriptFromString:js];
 }
 
 
 - (void)dealloc {
-    [webView release];
+    [self.webView release];
     [super dealloc];
 }
 @end

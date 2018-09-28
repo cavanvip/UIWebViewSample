@@ -10,5 +10,7 @@
 
 @interface ViewController : UIViewController<UIWebViewDelegate>
 
-@property (retain, nonatomic) IBOutlet UIWebView *webView;
+@property (retain, nonatomic) UIWebView *webView;
+@property (retain, nonatomic) UIButton *addLineBtn;
+
 @end
